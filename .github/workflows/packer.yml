@@ -16,7 +16,7 @@ jobs:
         run: "echo -n $SECRET | base64 --decode > test.pem"
       
       - name: test1
-        run: echo test.pem
+        run: cat test.pem
 
       - name: test1
         uses: ./

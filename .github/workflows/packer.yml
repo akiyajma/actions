@@ -15,7 +15,7 @@ jobs:
       - name: test
         uses: ./
         with:
-          command: echo -n $SECRET | base64 --decode > test.pem
+          command: "echo -n $SECRET | base64 --decode > test.pem"
           working_directory: ./packer
 
       - name: test1

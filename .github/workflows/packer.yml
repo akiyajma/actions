@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     name: packer
 
-    runs-on: self-hosted
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2

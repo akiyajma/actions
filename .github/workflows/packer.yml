@@ -28,7 +28,7 @@ jobs:
       - name: test1
         uses: ./
         with:
-          command: cat test.pem
+          command: cat mgmt.pem
           working_directory: ./packer
 
       - name: Packer Validate

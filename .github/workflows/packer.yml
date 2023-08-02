@@ -18,22 +18,9 @@ jobs:
       - name: create secret file
         run: echo -n $SECRET | base64 --decode > ./packer/mgmt.pem
       
-      - name: test
-        run: ls -l
-      
-      - name: test
-        run: pwd
-
-
       - name: test1
-        uses: ./
+        uses: docker
+        image: './docker/Dockerfile'
         with:
           command: cat mgmt.pem
           working_directory: ./packer
-
-      - name: Packer Validate
-        uses: ./
-        with:
-          command: packer validate -syntax-only build.pkr.hcl
-          working_directory: ./packer
-      

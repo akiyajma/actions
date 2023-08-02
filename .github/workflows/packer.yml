@@ -11,12 +11,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      
+
       - name: test
-        uses: ./
-        with:
-          command: "echo -n $SECRET | base64 --decode > test.pem"
-          working_directory: ./packer
+        run: "echo -n $SECRET | base64 --decode > test.pem"
+      
+      - name: test1
+        run: echo test.pem
 
       - name: test1
         uses: ./

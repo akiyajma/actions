@@ -14,12 +14,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: test
-        uses: ./
-        with:
-          command: echo -n $SECRET | base64 --decode > test.pem
-          working_directory: ./packer
+      
+      - name: create secret file
+        run: echo -n $SECRET | base64 --decode > ./packer/mgmt.pem
       
       - name: test1
         uses: ./

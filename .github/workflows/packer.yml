@@ -1,0 +1,19 @@
+name: Packer Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  packer:
+    runs-on: ubuntu-latest
+    name: packer
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Packer Validate
+        uses: ./
+        with:
+          command: packer validate -syntax-only build.pkr.hcl
+          working_directory: ./packer
+      

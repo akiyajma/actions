@@ -1,0 +1,14 @@
+name: 'Packer Build'
+description: 'Automatic build with Packer'
+inputs:
+  command:
+    description: 'input command'
+    required: true
+  
+  working_directory:
+    description: working directory for command (defaults to root)
+    required: false
+
+runs:
+  using: 'docker'
+  image: './docker/Dockerfile'

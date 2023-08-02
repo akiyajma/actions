@@ -18,6 +18,13 @@ jobs:
       - name: create secret file
         run: echo -n $SECRET | base64 --decode > ./packer/mgmt.pem
       
+      - name: test
+        run: ls -l
+      
+      - name: test
+        run: pwd
+
+
       - name: test1
         uses: ./
         with:

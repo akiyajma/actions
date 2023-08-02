@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: test
+        uses: ./
         with:
           command: echo -n $SECRET | base64 --decode > test.pem
           working_directory: ./packer

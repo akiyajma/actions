@@ -19,8 +19,8 @@ jobs:
         run: echo -n $SECRET | base64 --decode > ./packer/mgmt.pem
       
       - name: test1
-        uses: docker
-        image: './docker/Dockerfile'
+        using: docker
+        image: ./docker/Dockerfile
         with:
           command: cat mgmt.pem
           working_directory: ./packer

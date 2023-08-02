@@ -16,12 +16,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: test
-
-        run: "echo -n $SECRET | base64 --decode > test.pem"
+        with:
+          command: echo -n $SECRET | base64 --decode > test.pem
+          working_directory: ./packer
       
-      - name: test1
-        run: cat test.pem
-
       - name: test1
         uses: ./
         with:

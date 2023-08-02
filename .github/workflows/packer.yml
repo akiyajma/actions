@@ -5,7 +5,7 @@ on:
 
 jobs:
   packer:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: packer
     
     steps:
